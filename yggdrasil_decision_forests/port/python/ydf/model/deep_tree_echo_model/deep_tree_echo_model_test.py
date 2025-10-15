@@ -14,11 +14,12 @@
 
 """Tests for Deep Tree Echo model."""
 
-import unittest
+from absl.testing import absltest
+
 from ydf.model.deep_tree_echo_model import deep_tree_echo_model
 
 
-class DeepTreeEchoModelTest(unittest.TestCase):
+class DeepTreeEchoModelTest(absltest.TestCase):
   """Tests for DeepTreeEchoModel class."""
 
   def test_model_class_exists(self):
@@ -35,6 +36,16 @@ class DeepTreeEchoModelTest(unittest.TestCase):
         hasattr(deep_tree_echo_model.DeepTreeEchoModel, 'identity_hypergraph_config')
     )
 
+  def test_model_inherits_from_decision_forest(self):
+    """Test that DeepTreeEchoModel inherits from DecisionForestModel."""
+    from ydf.model.decision_forest_model import decision_forest_model
+    self.assertTrue(
+        issubclass(
+            deep_tree_echo_model.DeepTreeEchoModel,
+            decision_forest_model.DecisionForestModel
+        )
+    )
+
 
 if __name__ == '__main__':
-  unittest.main()
+  absltest.main()

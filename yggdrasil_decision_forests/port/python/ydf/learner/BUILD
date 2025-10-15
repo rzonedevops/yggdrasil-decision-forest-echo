@@ -501,3 +501,13 @@ py_test(
         "//ydf/utils:test_utils",
     ],
 )
+
+py_test(
+    name = "deep_tree_echo_learner_test",
+    srcs = ["deep_tree_echo_learner_test.py"],
+    deps = [
+        ":deep_tree_echo_learner",
+        ":generic_learner",
+        # absl/testing:absltest dep,
+    ],
+)
