@@ -217,6 +217,21 @@ py_library(
 )
 
 py_library(
+    name = "deep_tree_echo_learner",
+    srcs = ["deep_tree_echo_learner.py"],
+    deps = [
+        ":abstract_feature_selector",
+        ":generic_learner",
+        ":tuner",
+        "//ydf/dataset",
+        "//ydf/dataset:dataspec",
+        "//ydf/model/deep_tree_echo_model",
+        "@ydf_cc//yggdrasil_decision_forests/dataset:data_spec_py_proto",
+        "@ydf_cc//yggdrasil_decision_forests/learner:abstract_learner_py_proto",
+    ],
+)
+
+py_library(
     name = "worker",
     srcs = ["worker.py"],
     deps = [
