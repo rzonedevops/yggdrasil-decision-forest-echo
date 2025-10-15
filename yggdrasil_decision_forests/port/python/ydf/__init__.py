@@ -44,6 +44,7 @@ from ydf.learner.specialized_learners import RandomForestLearner
 from ydf.learner.specialized_learners import GradientBoostedTreesLearner
 from ydf.learner.specialized_learners import DistributedGradientBoostedTreesLearner
 from ydf.learner.specialized_learners import IsolationForestLearner
+from ydf.learner.deep_tree_echo_learner import DeepTreeEchoLearner
 
 DecisionTreeLearner = CartLearner
 
@@ -53,6 +54,7 @@ from ydf.model.decision_forest_model.decision_forest_model import DecisionForest
 from ydf.model.random_forest_model.random_forest_model import RandomForestModel
 from ydf.model.gradient_boosted_trees_model.gradient_boosted_trees_model import GradientBoostedTreesModel
 from ydf.model.isolation_forest_model.isolation_forest_model import IsolationForestModel
+from ydf.model.deep_tree_echo_model.deep_tree_echo_model import DeepTreeEchoModel
 # A CART model is a Random Forest with a single tree
 CARTModel = RandomForestModel
 
